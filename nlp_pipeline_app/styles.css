@@ -192,18 +192,29 @@ header[data-testid="stHeader"] button {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Highlights */
-/* HIGHLIGHTED BOXES REFINEMENT (Success & Info) */
-.stInfo, .stSuccess {
-    background-color: var(--primary-light) !important;
-    color: #1e293b !important; /* Deep Slate for maximum readability */
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
+/* AGGRESSIVE HIGHLIGHTED BOXES REFINEMENT */
+div[data-testid="stNotification"] {
+    background-color: #f0fdf4 !important; /* Extremely light green */
+    border: 1px solid #bbf7d0 !important;
+    border-radius: 12px !important;
 }
 
-[data-testid="stNotificationContent"] p {
-    color: #1e293b !important;
-    font-weight: 500 !important;
+div[data-testid="stNotification"] p, 
+div[data-testid="stNotification"] span,
+div[data-testid="stNotification"] div {
+    color: #166534 !important; /* DEEP FOREST GREEN for maximum contrast */
+    font-weight: 700 !important; /* Bold for clarity */
+}
+
+/* Specific override for info boxes if they should be blue */
+div[data-testid="stNotification"]:has(svg[aria-label="Info"]) {
+    background-color: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+}
+
+div[data-testid="stNotification"]:has(svg[aria-label="Info"]) p,
+div[data-testid="stNotification"]:has(svg[aria-label="Info"]) div {
+    color: #1e40af !important; /* DEEP NAVY BLUE */
 }
 
 .highlight-removed { background-color: #fee2e2; color: #ef4444; border-bottom: 2px solid #ef4444; padding: 2px 4px; }

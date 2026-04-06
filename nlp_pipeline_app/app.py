@@ -29,6 +29,12 @@ Follow the journey of a sentence through preprocessing, vectorization, and embed
 with st.sidebar:
     st.header("⚙️ Configuration")
     
+    # Theme Sync for Charts
+    theme_mode = st.radio("App Theme Mode", ["Light", "Dark"], horizontal=True)
+    chart_color = "#1e293b" if theme_mode == "Light" else "#f8fafc"
+    
+    st.divider()
+    
     user_input = st.text_area(
         "Enter raw text here:",
         "The quick brown fox jumps over the lazy dog. NLP is amazing for data science!",
@@ -166,7 +172,7 @@ with tab4:
         fig = px.bar(vocab_df.sort_values('Frequency', ascending=False).head(15), 
                      x='Token', y='Frequency', 
                      color='Frequency', color_continuous_scale='Viridis')
-        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
         st.plotly_chart(fig, use_container_width=True)
 
 # TAB 5: Vectorization
@@ -186,7 +192,7 @@ with tab5:
                     x=vector_df.columns,
                     aspect="auto",
                     color_continuous_scale='magma')
-    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 6: Static Embeddings
@@ -238,7 +244,7 @@ with tab7:
             
             fig = px.scatter(df_context, x='x', y='y', color='Context', text='Word', title=f'Contextual Drift for "{target}"')
             fig.update_traces(textposition='top center', marker=dict(size=20))
-            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
+            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
             st.plotly_chart(fig, use_container_width=True)
             
             st.success(f"In modern models like BERT, the word **'{target}'** has a different numerical home depending on whether it's a river side or a financial institution!")

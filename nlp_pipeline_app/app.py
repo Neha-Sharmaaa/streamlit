@@ -7,15 +7,19 @@ from utils import (
     get_vectorization, get_static_embeddings, get_contextual_embeddings
 )
 
+import os
+
 # Set Page Config
 st.set_page_config(
-    page_title="Transformer Journey: Text to Embeddings",
+    page_title="The NLP Pipeline Explorer",
     page_icon="🧠",
     layout="wide",
 )
 
-# Load CSS
-with open('styles.css') as f:
+# Load CSS (Robust path for deployment)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, "styles.css")
+with open(css_path) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # App Title & Intro

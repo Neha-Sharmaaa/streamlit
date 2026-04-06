@@ -1,4 +1,5 @@
 :root {
+    /* Light Theme (Default) */
     --primary: #4f46e5;
     --primary-hover: #4338ca;
     --background: #f8fafc;
@@ -8,6 +9,26 @@
     --text-secondary: #64748b;
     --glass: rgba(255, 255, 255, 0.9);
     --glass-border: rgba(226, 232, 240, 0.8);
+    --token-bg: #eef2ff;
+    --token-border: #e0e7ff;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #818cf8;
+        --primary-hover: #6366f1;
+        --background: #0f172a;
+        --secondary: #1e293b;
+        --accent: #fb7185;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --glass: rgba(30, 41, 59, 1);
+        --glass-border: rgba(51, 65, 85, 0.5);
+        --token-bg: #312e81;
+        --token-border: #4338ca;
+        --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .stApp {
@@ -26,13 +47,7 @@ header[data-testid="stHeader"] button {
     color: var(--text-primary) !important;
 }
 
-/* Sidebar styling for light mode */
-[data-testid="stSidebar"] {
-    background-color: var(--secondary) !important;
-    border-right: 1px solid var(--glass-border);
-}
-
-/* Global label color fixer for light theme */
+/* Global label color fixer */
 label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     color: var(--text-primary) !important;
 }
@@ -46,7 +61,7 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     font-weight: 700 !important;
 }
 
-/* Tab styling (Premium Light Modern) */
+/* Tab styling */
 .stTabs [data-baseweb="tab-list"] {
     gap: 8px;
     background-color: transparent;
@@ -69,7 +84,7 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     background-color: var(--primary) !important;
     color: white !important;
     border: 1px solid var(--primary-hover);
-    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(129, 140, 248, 0.2);
 }
 
 /* Card styling for steps */
@@ -79,7 +94,7 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     border-radius: 16px;
     padding: 32px;
     margin: 20px 0;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
 }
 
 .nlp-step-title {
@@ -105,15 +120,14 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
-    background: #eef2ff;
+    background: var(--token-bg);
     color: var(--primary);
-    border: 1px solid #e0e7ff;
+    border: 1px solid var(--token-border);
     transition: all 0.2s;
 }
 
 .token-chip:hover {
     transform: translateY(-2px);
-    background: #e0e7ff;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
@@ -132,6 +146,11 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
     border-radius: 4px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .highlight-removed { background-color: #450a0a; color: #f87171; }
+    .highlight-changed { background-color: #1e1b4b; color: #818cf8; }
+}
+
 /* Custom styles for headers and components */
 h1, h2, h3 {
     color: var(--text-primary) !important;
@@ -139,13 +158,13 @@ h1, h2, h3 {
 }
 
 .stInfo {
-    background-color: #f1f5f9 !important;
-    color: #475569 !important;
-    border: 1px solid #e2e8f0 !important;
+    background-color: var(--secondary) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--glass-border) !important;
 }
 
 .stSuccess {
-    background-color: #f0fdf4 !important;
-    color: #166534 !important;
-    border: 1px solid #dcfce7 !important;
+    background-color: var(--token-bg) !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--token-border) !important;
 }

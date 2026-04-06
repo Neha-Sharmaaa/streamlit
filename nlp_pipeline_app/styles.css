@@ -1,105 +1,114 @@
 :root {
-    /* Base Modern Styling */
-    --primary: #238636;
-    --accent: #58a6ff;
-    --background: #f6f8fa;
-    --secondary-bg: #ffffff;
-    --text: #24292f;
-    --card-bg: #ffffff;
-    --border: #d0d7de;
+    /* Premium Modern Light Theme (Clean & Professional) */
+    --primary: #4f46e5;      /* Indigo */
+    --primary-light: #eef2ff;
+    --background: #f8fafc;   /* Slate 50 */
+    --secondary-bg: #ffffff; /* Pure White */
+    --text-primary: #1e293b; /* Slate 800 */
+    --text-secondary: #64748b; /* Slate 500 */
+    --border: #e2e8f0;       /* Slate 200 */
+    --accent: #06b6d4;       /* Cyan */
 }
 
-/* Explicit Dark Mode Overrides for extreme high contrast (requested) */
-[data-theme="dark"] {
-    --background: #050505; /* VERY DARK */
-    --secondary-bg: #121212;
-    --text: #ffffff;      /* PURE WHITE text */
-    --card-bg: #121212;
-    --border: #333333;
-}
-
+/* Force light theme always */
 .stApp {
     background-color: var(--background) !important;
-    color: var(--text) !important;
+    color: var(--text-primary) !important;
 }
 
 [data-testid="stSidebar"] {
     background-color: var(--secondary-bg) !important;
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--border) !important;
 }
 
+/* Text Visibility */
 label, [data-testid="stWidgetLabel"] p, .stMarkdown p, h1, h2, h3, .stTabs {
-    color: var(--text) !important;
+    color: var(--text-primary) !important;
 }
 
 header[data-testid="stHeader"] {
-    background-color: transparent !important;
+    background-color: var(--background) !important;
 }
 
 header[data-testid="stHeader"] svg, 
 header[data-testid="stHeader"] button {
-    fill: var(--text) !important;
-    color: var(--text) !important;
+    fill: var(--text-primary) !important;
+    color: var(--text-primary) !important;
 }
 
-/* Tabs */
+/* Premium Tabs */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 4px;
+    gap: 8px;
     background-color: transparent;
-    padding: 0;
-    border-bottom: 2px solid var(--border);
+    padding: 10px 0;
 }
 
 .stTabs [data-baseweb="tab"] {
     height: 48px;
-    background-color: transparent;
-    color: var(--text);
-    opacity: 0.7;
-    border: none;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0px 20px;
+    transition: all 0.2s;
     font-weight: 600;
 }
 
 .stTabs [aria-selected="true"] {
-    color: var(--text) !important;
-    opacity: 1 !important;
-    border-bottom: 2px solid #f78166 !important;
+    background-color: var(--primary) !important;
+    color: white !important;
+    border: 1px solid var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
 }
 
-/* Card Section */
+/* Cards & Components */
 .nlp-card {
-    background: var(--card-bg);
+    background: var(--secondary-bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px;
-    margin: 16px 0;
+    border-radius: 12px;
+    padding: 32px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .nlp-step-title {
-    color: var(--text);
-    font-weight: 700;
-    font-size: 1.6rem;
+    color: var(--text-primary);
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
-/* Token chips */
+.nlp-explanation {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Tokens */
 .token-chip {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 6px 14px;
     margin: 4px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: 'SFMono-Regular', Consolas, monospace;
-    font-size: 0.9rem;
-    background: var(--secondary-bg);
-    color: var(--text);
-    border: 1px solid var(--border);
+    font-size: 0.95rem;
+    background: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid var(--primary-light);
+    font-weight: 600;
 }
 
 .token-chip:hover {
-    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific component colors */
+/* Highlights */
 .stInfo, .stSuccess {
-    background-color: var(--secondary-bg) !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    background-color: var(--primary-light) !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--primary-light) !important;
 }
+
+.highlight-removed { background-color: #fee2e2; color: #ef4444; border-bottom: 2px solid #ef4444; padding: 2px 4px; }
+.highlight-changed { background-color: #e0f2fe; color: #0284c7; border-bottom: 2px solid #0284c7; padding: 2px 4px; }

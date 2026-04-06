@@ -51,15 +51,22 @@ button:not(.modebar-btn), [data-testid="stBaseButton-primary"], [data-testid="st
     transition: all 0.2s !important;
 }
 
-/* Ensure icons inside header buttons are also white */
-header button svg, header button svg path {
-    fill: #ffffff !important;
+/* HEADER BUTTON REFINEMENT (Deploy & Menu) */
+header [data-testid="stHeader"] button, 
+header [data-testid="stHeader"] button span,
+header [data-testid="stHeader"] button div {
     color: #ffffff !important;
 }
 
-button:not(.modebar-btn):hover, header button:hover {
-    background-color: var(--primary-hover) !important;
-    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3) !important;
+header [data-testid="stHeader"] button svg {
+    fill: #ffffff !important;
+}
+
+header [data-testid="stHeader"] button {
+    background-color: var(--primary) !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 2px 10px !important;
 }
 
 /* Fix for footer / "Made with Streamlit" area glitch */

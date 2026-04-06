@@ -15,6 +15,17 @@
     color: var(--text-primary);
 }
 
+/* Fix visibility for top navigation bar */
+header[data-testid="stHeader"] {
+    background-color: var(--background) !important;
+}
+
+header[data-testid="stHeader"] svg, 
+header[data-testid="stHeader"] button {
+    fill: var(--text-primary) !important;
+    color: var(--text-primary) !important;
+}
+
 /* Sidebar styling for light mode */
 [data-testid="stSidebar"] {
     background-color: var(--secondary) !important;

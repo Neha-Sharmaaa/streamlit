@@ -171,7 +171,13 @@ with tab4:
         fig = px.bar(vocab_df.sort_values('Frequency', ascending=False).head(15), 
                      x='Token', y='Frequency', 
                      color='Frequency', color_continuous_scale='Viridis')
-        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
+        fig.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)', 
+            plot_bgcolor='rgba(0,0,0,0)', 
+            font=dict(color=chart_color),
+            xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
+            yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
+        )
         st.plotly_chart(fig, use_container_width=True)
 
 # TAB 5: Vectorization

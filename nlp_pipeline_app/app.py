@@ -191,7 +191,13 @@ with tab5:
                     x=vector_df.columns,
                     aspect="auto",
                     color_continuous_scale='magma')
-    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)', 
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color=chart_color),
+        xaxis=dict(tickfont=dict(color=chart_color)),
+        yaxis=dict(tickfont=dict(color=chart_color))
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 6: Static Embeddings
@@ -205,12 +211,14 @@ with tab6:
     fig = px.scatter(embedding_df, x='x', y='y', text='word', size_max=60)
     fig.update_traces(textposition='top center', marker=dict(size=12, color='#6366f1'))
     fig.update_layout(
-        title="2D Projection of Word Vectors (PCA)",
+        title=dict(text="2D Projection of Word Vectors (PCA)", font=dict(color=chart_color, size=20)),
         xaxis_title="Semantic Dimension 1",
         yaxis_title="Semantic Dimension 2",
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font_color=chart_color
+        font=dict(color=chart_color),
+        xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
+        yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
     )
     st.plotly_chart(fig, use_container_width=True)
     
@@ -243,7 +251,13 @@ with tab7:
             
             fig = px.scatter(df_context, x='x', y='y', color='Context', text='Word', title=f'Contextual Drift for "{target}"')
             fig.update_traces(textposition='top center', marker=dict(size=20))
-            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color=chart_color)
+            fig.update_layout(
+                paper_bgcolor='rgba(0,0,0,0)', 
+                plot_bgcolor='rgba(0,0,0,0)', 
+                font=dict(color=chart_color),
+                xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
+                yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
+            )
             st.plotly_chart(fig, use_container_width=True)
             
             st.success(f"In modern models like BERT, the word **'{target}'** has a different numerical home depending on whether it's a river side or a financial institution!")

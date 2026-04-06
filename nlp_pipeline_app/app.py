@@ -175,8 +175,8 @@ with tab4:
             paper_bgcolor='rgba(0,0,0,0)', 
             plot_bgcolor='rgba(0,0,0,0)', 
             font=dict(color=chart_color),
-            xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
-            yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
+            xaxis=dict(tickfont=dict(color=chart_color), title=dict(font=dict(color=chart_color))),
+            yaxis=dict(tickfont=dict(color=chart_color), title=dict(font=dict(color=chart_color)))
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -218,13 +218,17 @@ with tab6:
     fig.update_traces(textposition='top center', marker=dict(size=12, color='#6366f1'))
     fig.update_layout(
         title=dict(text="2D Projection of Word Vectors (PCA)", font=dict(color=chart_color, size=20)),
-        xaxis_title="Semantic Dimension 1",
-        yaxis_title="Semantic Dimension 2",
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(color=chart_color),
-        xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
-        yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
+        xaxis=dict(
+            title=dict(text="Semantic Dimension 1", font=dict(color=chart_color)),
+            tickfont=dict(color=chart_color)
+        ),
+        yaxis=dict(
+            title=dict(text="Semantic Dimension 2", font=dict(color=chart_color)),
+            tickfont=dict(color=chart_color)
+        )
     )
     st.plotly_chart(fig, use_container_width=True)
     
@@ -261,8 +265,8 @@ with tab7:
                 paper_bgcolor='rgba(0,0,0,0)', 
                 plot_bgcolor='rgba(0,0,0,0)', 
                 font=dict(color=chart_color),
-                xaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color)),
-                yaxis=dict(tickfont=dict(color=chart_color), titlefont=dict(color=chart_color))
+                xaxis=dict(tickfont=dict(color=chart_color), title=dict(font=dict(color=chart_color))),
+                yaxis=dict(tickfont=dict(color=chart_color), title=dict(font=dict(color=chart_color)))
             )
             st.plotly_chart(fig, use_container_width=True)
             

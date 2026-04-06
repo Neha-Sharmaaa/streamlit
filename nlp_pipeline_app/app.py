@@ -29,30 +29,8 @@ Follow the journey of a sentence through preprocessing, vectorization, and embed
 with st.sidebar:
     st.header("⚙️ Configuration")
     
-    # Theme Sync for Charts
-    theme_mode = st.radio("App Theme Mode", ["Light", "Dark"], horizontal=True)
-    chart_color = "#24292f" if theme_mode == "Light" else "#c9d1d9"
-    
-    if theme_mode == "Dark":
-        st.markdown("""
-            <style>
-                :root {
-                    --primary: #238636;
-                    --primary-hover: #2ea043;
-                    --background: #0d1117;
-                    --secondary: #161b22;
-                    --accent: #58a6ff;
-                    --text-primary: #c9d1d9;
-                    --text-secondary: #8b949e;
-                    --glass: #161b22;
-                    --glass-border: #30363d;
-                    --token-bg: #21262d;
-                    --token-border: #30363d;
-                    --card-shadow: 0 8px 24px rgba(0,0,0,0.5);
-                }
-                .stApp { background-color: var(--background) !important; }
-            </style>
-        """, unsafe_allow_html=True)
+    # Now follows the built-in Streamlit theme menu (1 method)
+    chart_color = "#8b949e" 
     
     st.divider()
     

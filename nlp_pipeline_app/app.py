@@ -196,7 +196,7 @@ with tab5:
                     labels=dict(x="Token", y="Sentence Index", color="Weight"),
                     x=vector_df.columns,
                     aspect="auto",
-                    color_continuous_scale='magma')
+                    color_continuous_scale='YlOrRd')
     fig.update_layout(
         paper_bgcolor='rgba(0,0,0,0)', 
         plot_bgcolor='rgba(0,0,0,0)',

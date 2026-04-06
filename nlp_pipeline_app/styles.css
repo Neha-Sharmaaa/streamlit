@@ -40,8 +40,8 @@ div[role="combobox"] {
     border: 1px solid var(--border) !important;
 }
 
-/* BUTTON STYLING (Fixing invisible text on Analyze Context etc.) */
-button, [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-secondary"] {
+/* BUTTON STYLING (Exclude Plotly modebar buttons) */
+button:not(.modebar-btn), [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-secondary"] {
     background-color: var(--primary) !important;
     color: white !important;
     border-radius: 8px !important;
@@ -51,7 +51,7 @@ button, [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-seconda
     transition: all 0.2s !important;
 }
 
-button:hover {
+button:not(.modebar-btn):hover {
     background-color: var(--primary-hover) !important;
     box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3) !important;
 }

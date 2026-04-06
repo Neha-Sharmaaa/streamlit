@@ -192,7 +192,21 @@ header[data-testid="stHeader"] button {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* AGGRESSIVE HIGHLIGHTED BOXES REFINEMENT */
+/* Force Light Theme on Dataframes & Tables */
+[data-testid="stDataFrame"] {
+    background-color: #ffffff !important;
+}
+
+[data-testid="stDataFrame"] td, [data-testid="stDataFrame"] th {
+    color: #1e293b !important;
+}
+
+[data-testid="stTable"] tr {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+}
+
+/* Highlights */
 div[data-testid="stNotification"] {
     background-color: #f0fdf4 !important; /* Extremely light green */
     border: 1px solid #bbf7d0 !important;

@@ -29,8 +29,23 @@ Follow the journey of a sentence through preprocessing, vectorization, and embed
 with st.sidebar:
     st.header("⚙️ Configuration")
     
-    # Now follows the built-in Streamlit theme menu (1 method)
-    chart_color = "#8b949e" 
+    # 🌓 Theme Configuration (Requested back for reliability)
+    theme_mode = st.radio("Select App Mode", ["Classic Light", "Night Vision (Pure Dark)"], horizontal=True)
+    
+    if "Night Vision" in theme_mode:
+        st.markdown("""
+            <style>
+                .stApp { background-color: #050505 !important; color: #ffffff !important; }
+                [data-testid="stSidebar"] { background-color: #121212 !important; border-right: 1px solid #333; }
+                label, [data-testid="stWidgetLabel"] p, .stMarkdown p, h1, h2, h3, .stTabs { color: #ffffff !important; }
+                .token-chip { background: #121212 !important; color: #ffffff !important; border: 1px solid #333 !important; }
+                .nlp-card { background: #121212 !important; border: 1px solid #333 !important; }
+                header[data-testid="stHeader"] svg, header[data-testid="stHeader"] button { fill: #ffffff !important; color: #ffffff !important; }
+            </style>
+        """, unsafe_allow_html=True)
+        chart_color = "#ffffff"
+    else:
+        chart_color = "#24292f"
     
     st.divider()
     

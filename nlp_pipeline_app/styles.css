@@ -1,12 +1,21 @@
 :root {
-    /* Use Streamlit native variables as the single source of truth */
-    --primary: #238636; /* GitHub Green */
-    --accent: #58a6ff;  /* GitHub Blue */
-    
-    /* Pulling colors from Streamlit's internal theme variables */
-    --background: var(--background-color, #f6f8fa);
-    --secondary-bg: var(--secondary-background-color, #ffffff);
-    --text: var(--text-color, #24292f);
+    /* Base Modern Styling */
+    --primary: #238636;
+    --accent: #58a6ff;
+    --background: #f6f8fa;
+    --secondary-bg: #ffffff;
+    --text: #24292f;
+    --card-bg: #ffffff;
+    --border: #d0d7de;
+}
+
+/* Explicit Dark Mode Overrides for extreme high contrast (requested) */
+[data-theme="dark"] {
+    --background: #050505; /* VERY DARK */
+    --secondary-bg: #121212;
+    --text: #ffffff;      /* PURE WHITE text */
+    --card-bg: #121212;
+    --border: #333333;
 }
 
 .stApp {
@@ -16,10 +25,10 @@
 
 [data-testid="stSidebar"] {
     background-color: var(--secondary-bg) !important;
+    border-right: 1px solid var(--border);
 }
 
-/* Global label and text visibility sync */
-label, [data-testid="stWidgetLabel"] p, .stMarkdown p, h1, h2, h3 {
+label, [data-testid="stWidgetLabel"] p, .stMarkdown p, h1, h2, h3, .stTabs {
     color: var(--text) !important;
 }
 
@@ -33,53 +42,42 @@ header[data-testid="stHeader"] button {
     color: var(--text) !important;
 }
 
-/* Unified Tab styling (GitHub Slate style) */
+/* Tabs */
 .stTabs [data-baseweb="tab-list"] {
     gap: 4px;
     background-color: transparent;
     padding: 0;
-    border-bottom: 2px solid var(--secondary-bg);
+    border-bottom: 2px solid var(--border);
 }
 
 .stTabs [data-baseweb="tab"] {
     height: 48px;
     background-color: transparent;
-    border-radius: 0px;
     color: var(--text);
-    opacity: 0.8;
+    opacity: 0.7;
     border: none;
-    padding: 0px 16px;
-    transition: all 0.2s;
     font-weight: 600;
 }
 
 .stTabs [aria-selected="true"] {
-    background-color: transparent !important;
     color: var(--text) !important;
-    opacity: 1;
+    opacity: 1 !important;
     border-bottom: 2px solid #f78166 !important;
 }
 
-/* Card styling */
+/* Card Section */
 .nlp-card {
-    background: var(--secondary-bg);
-    border: 1px solid var(--secondary-bg);
-    border-radius: 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     padding: 24px;
     margin: 16px 0;
 }
 
 .nlp-step-title {
     color: var(--text);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.nlp-explanation {
-    color: var(--text);
-    opacity: 0.8;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 
 /* Token chips */
@@ -92,13 +90,16 @@ header[data-testid="stHeader"] button {
     font-size: 0.9rem;
     background: var(--secondary-bg);
     color: var(--text);
-    border: 1px solid var(--secondary-bg);
+    border: 1px solid var(--border);
 }
 
 .token-chip:hover {
     border-color: var(--accent);
 }
 
-/* Highlights */
-.highlight-removed { background-color: rgba(248,81,73,0.1); color: #f85149; text-decoration: line-through; padding: 2px 4px; border-radius: 4px; }
-.highlight-changed { background-color: rgba(56,139,253,0.1); color: #58a6ff; border-bottom: 2px solid #58a6ff; padding: 2px 4px; border-radius: 4px; }
+/* Specific component colors */
+.stInfo, .stSuccess {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}

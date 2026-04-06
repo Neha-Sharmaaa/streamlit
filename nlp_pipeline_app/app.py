@@ -166,7 +166,7 @@ with tab4:
         fig = px.bar(vocab_df.sort_values('Frequency', ascending=False).head(15), 
                      x='Token', y='Frequency', 
                      color='Frequency', color_continuous_scale='Viridis')
-        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='white')
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
         st.plotly_chart(fig, use_container_width=True)
 
 # TAB 5: Vectorization
@@ -186,7 +186,7 @@ with tab5:
                     x=vector_df.columns,
                     aspect="auto",
                     color_continuous_scale='magma')
-    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color='white')
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 6: Static Embeddings
@@ -205,7 +205,7 @@ with tab6:
         yaxis_title="Semantic Dimension 2",
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font_color='white'
+        font_color='#1e293b'
     )
     st.plotly_chart(fig, use_container_width=True)
     
@@ -238,7 +238,7 @@ with tab7:
             
             fig = px.scatter(df_context, x='x', y='y', color='Context', text='Word', title=f'Contextual Drift for "{target}"')
             fig.update_traces(textposition='top center', marker=dict(size=20))
-            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='white')
+            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#1e293b')
             st.plotly_chart(fig, use_container_width=True)
             
             st.success(f"In modern models like BERT, the word **'{target}'** has a different numerical home depending on whether it's a river side or a financial institution!")

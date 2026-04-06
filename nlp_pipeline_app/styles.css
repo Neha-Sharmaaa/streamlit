@@ -41,19 +41,31 @@ div[role="combobox"] {
 }
 
 /* BUTTON STYLING (Exclude Plotly modebar buttons) */
-button:not(.modebar-btn), [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-secondary"] {
+button:not(.modebar-btn), [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-secondary"], header button {
     background-color: var(--primary) !important;
-    color: white !important;
+    color: #ffffff !important;
     border-radius: 8px !important;
     border: none !important;
-    padding: 0.5rem 2rem !important;
+    padding: 0.5rem 1rem !important;
     font-weight: 700 !important;
     transition: all 0.2s !important;
 }
 
-button:not(.modebar-btn):hover {
+/* Ensure icons inside header buttons are also white */
+header button svg, header button svg path {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+button:not(.modebar-btn):hover, header button:hover {
     background-color: var(--primary-hover) !important;
     box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3) !important;
+}
+
+/* Fix for footer / "Made with Streamlit" area glitch */
+footer span, footer p {
+    color: #1e293b !important;
+    background-color: transparent !important;
 }
 
 /* Ensure ALL labels in main content and sidebar are dark */

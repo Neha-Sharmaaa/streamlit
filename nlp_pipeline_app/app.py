@@ -211,7 +211,7 @@ with tab6:
         yaxis_title="Semantic Dimension 2",
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font_color='#1e293b'
+        font_color=chart_color
     )
     st.plotly_chart(fig, use_container_width=True)
     

@@ -1,4 +1,20 @@
-:root {
+/* Hide the built-in Streamlit theme switcher from the menu */
+div[data-testid="stMainBlockContainer"] + div [data-baseweb="popover"] div:has(> button[data-testid="stSidebarToggle"]), 
+[data-testid="stAppViewBlockContainer"] header button ~ div[role="menu"] div:nth-child(1),
+div[data-baseweb="popover"] > div > div > div:first-child {
+    /* Targetting the theme selector block in the popover */
+}
+
+/* More reliable way: target the buttons themselves inside any popover if they contain theme icons */
+div[data-baseweb="popover"] button:has(svgpath[d*="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z"]),
+div[data-baseweb="popover"] button:has(svgpath[d*="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"]) {
+    display: none !important;
+}
+
+/* Simplest way: Target the first row of buttons in the settings popover which is always the theme switcher */
+div[data-baseweb="popover"] > div > div > div:first-child {
+    display: none !important;
+}
     /* Premium Modern Light Theme (Clean & Professional) */
     --primary: #4f46e5;      /* Indigo */
     --primary-light: #eef2ff;

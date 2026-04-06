@@ -1,78 +1,52 @@
 :root {
-    /* Light Theme (Clean Modern) */
-    --primary: #2ea44f; /* GitHub-style green accent */
-    --primary-hover: #2c974b;
-    --background: #f6f8fa;
-    --secondary: #ffffff;
-    --accent: #0969da; /* GitHub-style blue */
-    --text-primary: #24292f;
-    --text-secondary: #57606a;
-    --glass: rgba(255, 255, 255, 0.9);
-    --glass-border: #d0d7de;
-    --token-bg: #f3f4f6;
-    --token-border: #d1d5db;
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* GitHub Slate Theme (Reference Match) */
-        --primary: #238636; /* GitHub Dark Green */
-        --primary-hover: #2ea043;
-        --background: #0d1117; /* GitHub Dark Background */
-        --secondary: #161b22; /* GitHub Dark Secondary */
-        --accent: #58a6ff;   /* GitHub Dark Blue Information */
-        --text-primary: #c9d1d9; /* GitHub Dark Text */
-        --text-secondary: #8b949e; /* GitHub Dark Subtext */
-        --glass: #161b22;
-        --glass-border: #30363d;
-        --token-bg: #21262d;
-        --token-border: #30363d;
-        --card-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    }
+    /* Use Streamlit native variables as the single source of truth */
+    --primary: #238636; /* GitHub Green */
+    --accent: #58a6ff;  /* GitHub Blue */
+    
+    /* Pulling colors from Streamlit's internal theme variables */
+    --background: var(--background-color, #f6f8fa);
+    --secondary-bg: var(--secondary-background-color, #ffffff);
+    --text: var(--text-color, #24292f);
 }
 
 .stApp {
-    background-color: var(--background);
-    color: var(--text-primary);
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+}
+
+[data-testid="stSidebar"] {
+    background-color: var(--secondary-bg) !important;
+}
+
+/* Global label and text visibility sync */
+label, [data-testid="stWidgetLabel"] p, .stMarkdown p, h1, h2, h3 {
+    color: var(--text) !important;
 }
 
 header[data-testid="stHeader"] {
-    background-color: var(--background) !important;
+    background-color: transparent !important;
 }
 
 header[data-testid="stHeader"] svg, 
 header[data-testid="stHeader"] button {
-    fill: var(--text-primary) !important;
-    color: var(--text-primary) !important;
+    fill: var(--text) !important;
+    color: var(--text) !important;
 }
 
-label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
-    color: var(--text-primary) !important;
-}
-
-[data-testid="stSidebar"] {
-    background-color: var(--secondary) !important;
-    border-right: 1px solid var(--glass-border);
-}
-
-[data-testid="stSidebar"] .stSubheader p {
-    font-weight: 700 !important;
-}
-
-/* Tab styling (GitHub-style) */
+/* Unified Tab styling (GitHub Slate style) */
 .stTabs [data-baseweb="tab-list"] {
     gap: 4px;
     background-color: transparent;
     padding: 0;
-    border-bottom: 2px solid var(--glass-border);
+    border-bottom: 2px solid var(--secondary-bg);
 }
 
 .stTabs [data-baseweb="tab"] {
     height: 48px;
     background-color: transparent;
     border-radius: 0px;
-    color: var(--text-secondary);
+    color: var(--text);
+    opacity: 0.8;
     border: none;
     padding: 0px 16px;
     transition: all 0.2s;
@@ -81,84 +55,50 @@ label, [data-testid="stWidgetLabel"] p, .stMarkdown p {
 
 .stTabs [aria-selected="true"] {
     background-color: transparent !important;
-    color: var(--text-primary) !important;
-    border-bottom: 2px solid #f78166 !important; /* GitHub underline style */
+    color: var(--text) !important;
+    opacity: 1;
+    border-bottom: 2px solid #f78166 !important;
 }
 
-/* Card styling (GitHub-style) */
+/* Card styling */
 .nlp-card {
-    background: var(--secondary);
-    border: 1px solid var(--glass-border);
+    background: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
     border-radius: 6px;
     padding: 24px;
     margin: 16px 0;
-    box-shadow: none;
 }
 
 .nlp-step-title {
-    color: var(--text-primary);
+    color: var(--text);
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 8px;
 }
 
 .nlp-explanation {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.5;
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-/* Token chips (GitHub-style) */
+/* Token chips */
 .token-chip {
     display: inline-block;
-    padding: 2px 10px;
+    padding: 4px 12px;
     margin: 4px;
     border-radius: 20px;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 0.85rem;
-    background: var(--token-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--token-border);
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.9rem;
+    background: var(--secondary-bg);
+    color: var(--text);
+    border: 1px solid var(--secondary-bg);
 }
 
 .token-chip:hover {
     border-color: var(--accent);
 }
 
-.highlight-removed {
-    background-color: #ffdce0;
-    color: #cf222e;
-    text-decoration: line-through;
-    padding: 2px 4px;
-    border-radius: 4px;
-}
-
-.highlight-changed {
-    background-color: #ddf4ff;
-    color: #0969da;
-    border-bottom: 2px solid #0969da;
-    padding: 2px 4px;
-    border-radius: 4px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .highlight-removed { background-color: rgba(248,81,73,0.15); color: #f85149; }
-    .highlight-changed { background-color: rgba(56,139,253,0.15); color: #58a6ff; }
-}
-
-h1, h2, h3 {
-    color: var(--text-primary) !important;
-    font-weight: 600 !important;
-}
-
-.stInfo {
-    background-color: rgba(56,139,253,0.1) !important;
-    color: var(--accent) !important;
-    border: 1px solid rgba(56,139,253,0.4) !important;
-}
-
-.stSuccess {
-    background-color: rgba(63,185,80,0.1) !important;
-    color: #3fb950 !important;
-    border: 1px solid rgba(63,185,80,0.4) !important;
-}
+/* Highlights */
+.highlight-removed { background-color: rgba(248,81,73,0.1); color: #f85149; text-decoration: line-through; padding: 2px 4px; border-radius: 4px; }
+.highlight-changed { background-color: rgba(56,139,253,0.1); color: #58a6ff; border-bottom: 2px solid #58a6ff; padding: 2px 4px; border-radius: 4px; }

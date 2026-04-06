@@ -207,24 +207,25 @@ header[data-testid="stHeader"] button {
 }
 
 /* Highlights */
-/* UNIFIED PREMIUM RESULT BOXES (Replacing Green/Blue with Indigo/Slate) */
-div[data-testid="stNotification"] {
-    background-color: #f5f3ff !important; /* Premium Violet/Indigo-50 */
-    border: 1px solid #ddd6fe !important; /* Violet-200 */
-    border-radius: 12px !important;
+/* ULTRA-AGGRESSIVE PREMIUM CARD STYLE FOR RESULTS */
+.stSuccess, .stInfo, div[data-testid="stNotification"], [data-testid="stNotificationContent"] {
+    background-color: #ffffff !important; /* PURE WHITE BACKGROUND */
+    border: none !important;
+    border-left: 5px solid #4f46e5 !important; /* THICK INDIGO LEFT BORDER */
+    border-radius: 4px 12px 12px 4px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    color: #1e293b !important;
 }
 
-div[data-testid="stNotification"] p, 
-div[data-testid="stNotification"] span,
-div[data-testid="stNotification"] div {
-    color: #1e1b4b !important; /* Deepest Indigo-950 for premium readability */
+/* Force ALL internal text for these components to Deep Slate */
+.stSuccess *, .stInfo *, div[data-testid="stNotification"] * {
+    color: #1e293b !important;
     font-weight: 700 !important;
 }
 
-/* Ensure icons match the indigo theme */
-div[data-testid="stNotification"] svg {
-    fill: #4f46e5 !important;
-    color: #4f46e5 !important;
+/* Ensure the background of the entire notification block is pure white */
+div[data-testid="stNotification"] > div {
+    background-color: #ffffff !important;
 }
 
 .highlight-removed { background-color: #fee2e2; color: #ef4444; border-bottom: 2px solid #ef4444; padding: 2px 4px; }

@@ -1,0 +1,96 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --background: #0f172a;
+    --secondary: #1e293b;
+    --accent: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.stApp {
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.sidebar .sidebar-content {
+    background-color: var(--secondary);
+}
+
+/* Tab styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    white-space: pre-wrap;
+    background-color: var(--glass);
+    border-radius: 8px 8px 0px 0px;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    padding: 0px 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Card styling for steps */
+.nlp-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.nlp-step-title {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.nlp-explanation {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Visualization Styling */
+.token-chip {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary-hover);
+    transition: transform 0.2s;
+}
+
+.token-chip:hover {
+    transform: scale(1.1);
+}
+
+.highlight-removed {
+    background-color: rgba(244, 63, 94, 0.2);
+    text-decoration: line-through;
+    color: var(--accent);
+}
+
+.highlight-changed {
+    background-color: rgba(99, 102, 241, 0.2);
+    border-bottom: 2px dashed var(--primary);
+}

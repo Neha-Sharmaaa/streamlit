@@ -33,6 +33,27 @@ with st.sidebar:
     theme_mode = st.radio("App Theme Mode", ["Light", "Dark"], horizontal=True)
     chart_color = "#1e293b" if theme_mode == "Light" else "#f8fafc"
     
+    if theme_mode == "Dark":
+        st.markdown("""
+            <style>
+                :root {
+                    --primary: #818cf8;
+                    --primary-hover: #6366f1;
+                    --background: #0f172a;
+                    --secondary: #1e293b;
+                    --accent: #fb7185;
+                    --text-primary: #f8fafc;
+                    --text-secondary: #94a3b8;
+                    --glass: rgba(30, 41, 59, 1);
+                    --glass-border: rgba(51, 65, 85, 0.5);
+                    --token-bg: #312e81;
+                    --token-border: #4338ca;
+                    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+                }
+                .stApp { background-color: var(--background) !important; }
+            </style>
+        """, unsafe_allow_html=True)
+    
     st.divider()
     
     user_input = st.text_area(

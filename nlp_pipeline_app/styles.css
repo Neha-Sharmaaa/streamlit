@@ -15,6 +15,7 @@ div[data-baseweb="popover"] button:has(svgpath[d*="M20 8.69V4h-4.69L12 .69 8.69 
 div[data-baseweb="popover"] > div > div > div:first-child {
     display: none !important;
 }
+:root {
     /* Premium Modern Light Theme (Clean & Professional) */
     --primary: #4f46e5;      /* Indigo */
     --primary-light: #eef2ff;
@@ -26,15 +27,68 @@ div[data-baseweb="popover"] > div > div > div:first-child {
     --accent: #06b6d4;       /* Cyan */
 }
 
-/* Force light theme always */
-.stApp {
-    background-color: var(--background) !important;
-    color: var(--text-primary) !important;
+/* Force Light Backgrounds on all Input Widgets & Selectors */
+[data-testid="stTextArea"] textarea, 
+[data-testid="stSelectbox"] div[data-baseweb="select"],
+[data-testid="stSelectbox"] [data-testid="stMarkdownContainer"] p,
+.stTextInput input,
+.stNumberInput input,
+div[data-baseweb="input"],
+div[role="combobox"] {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* BUTTON STYLING (Fixing invisible text on Analyze Context etc.) */
+button, [data-testid="stBaseButton-primary"], [data-testid="stBaseButton-secondary"] {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0.5rem 2rem !important;
+    font-weight: 700 !important;
+    transition: all 0.2s !important;
+}
+
+button:hover {
+    background-color: var(--primary-hover) !important;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3) !important;
+}
+
+/* Ensure ALL labels in main content and sidebar are dark */
+label, 
+[data-testid="stWidgetLabel"] p, 
+[data-testid="stRadio"] label,
+[data-testid="stRadio"] div[data-testid="stMarkdownContainer"] p,
+.stMarkdown p,
+span[data-baseweb="tag"],
+h1, h2, h3 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Specific fix for inputs in main container */
+[data-testid="stAppViewBlockContainer"] [data-testid="stTextInput"] input {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border: 1px solid var(--border) !important;
 }
 
 [data-testid="stSidebar"] {
-    background-color: var(--secondary-bg) !important;
+    background-color: #ffffff !important;
     border-right: 1px solid var(--border) !important;
+}
+
+/* Ensure the main container is bright and clean */
+.stApp {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+}
+
+/* Fix visibility for specific radio button groups */
+div[data-testid="stRadio"] > div {
+    gap: 10px;
 }
 
 /* Text Visibility */

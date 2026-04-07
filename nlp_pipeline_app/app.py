@@ -12,7 +12,7 @@ import os
 # Set Page Config
 st.set_page_config(
     page_title="The NLP Pipeline Explorer",
-    page_icon="🧠",
+    page_icon=":material/psychology:",
     layout="wide",
 )
 
@@ -23,7 +23,7 @@ with open(css_path) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # App Title & Intro
-st.title("🧠 The NLP Pipeline Explorer")
+st.title("The NLP Pipeline Explorer", icon=":material/psychology:")
 st.markdown("""
 ### Discover how machines turn human language into numerical logic.
 Follow the journey of a sentence through preprocessing, vectorization, and embeddings.
@@ -31,7 +31,7 @@ Follow the journey of a sentence through preprocessing, vectorization, and embed
 
 # Sidebar Sidebar
 with st.sidebar:
-    st.header("⚙️ Configuration")
+    st.header("Configuration", icon=":material/settings:")
     
     # Premium Indigo Chart Theme
     chart_color = "#1e293b" 
@@ -46,7 +46,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("🧹 Cleaning Options")
+    st.subheader("Cleaning Options", icon=":material/cleaning_services:")
     lowercasing = st.toggle("Lowercasing", True)
     remove_punct = st.toggle("Remove Punctuation", True)
     remove_special = st.toggle("Remove Special Characters", False)
@@ -59,7 +59,7 @@ with st.sidebar:
 
     st.divider()
     
-    st.subheader("✂️ Tokenization")
+    st.subheader("Tokenization", icon=":material/content_cut:")
     token_type = st.selectbox(
         "Tokenization Level",
         ["word", "subword", "character"]
@@ -67,7 +67,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("📊 Normalization")
+    st.subheader("Normalization", icon=":material/bar_chart:")
     remove_stop = st.toggle("Remove Stopwords", True)
     norm_method = st.radio(
         "Stemming / Lemmatization",
@@ -82,7 +82,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("🔢 Vectorization")
+    st.subheader("Vectorization", icon=":material/format_list_numbered:")
     vector_method = st.selectbox(
         "Method",
         ["Bag-of-Words", "TF-IDF"]
@@ -96,8 +96,8 @@ vocab_df = get_vocabulary(norm_tokens)
 
 # --- MAIN UI TABS ---
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-    "🧹 Cleaning", "✂️ Tokenization", "🗜️ Normalization", 
-    "📚 Vocabulary", "🔢 Vectorization", "🗺️ Static Embeddings", "🤖 Contextual"
+    "Cleaning", "Tokenization", "Normalization", 
+    "Vocabulary", "Vectorization", "Static Embeddings", "Contextual"
 ])
 
 # TAB 1: Cleaning
@@ -236,7 +236,7 @@ with tab6:
     )
     st.plotly_chart(fig, use_container_width=True)
     
-    st.info("💡 Notice how words used in similar contexts tend to drift toward each other in this 2D space.")
+    st.info("Notice how words used in similar contexts tend to drift toward each other in this 2D space.", icon=":material/lightbulb:")
 
 # TAB 7: Contextual Embeddings
 with tab7:
@@ -277,4 +277,4 @@ with tab7:
             st.success(f"In modern models like BERT, the word **'{target}'** has a different numerical home depending on whether it's a river side or a financial institution!")
 
 st.markdown("---")
-st.markdown("Made with ❤️ for NLP Enthusiasts")
+st.markdown("Made with :material/favorite: for NLP Enthusiasts")

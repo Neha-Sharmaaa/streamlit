@@ -2,8 +2,8 @@
 
 
 /* More reliable way: target the buttons themselves inside any popover if they contain theme icons */
-div[data-baseweb="popover"] button:has(svgpath[d*="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z"]),
-div[data-baseweb="popover"] button:has(svgpath[d*="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"]) {
+div[data-baseweb="popover"] button:has(svg path[d*="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z"]),
+div[data-baseweb="popover"] button:has(svg path[d*="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"]) {
     display: none !important;
 }
 

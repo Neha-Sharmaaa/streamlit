@@ -1,4 +1,4 @@
-# 🧠 The NLP Pipeline Explorer
+# <img src="https://api.iconify.design/material-symbols:psychology.svg?color=%234f46e5" width="32" align="center"> The NLP Pipeline Explorer
 
 A premium, interactive educational tool to visualize the journey of human language into numerical logic. Discover how machines perceive text through cleaning, tokenization, normalization, and advanced embeddings.
 
@@ -8,21 +8,21 @@ A premium, interactive educational tool to visualize the journey of human langua
 
 ---
 
-## ✨ Key Features
+## <img src="https://api.iconify.design/material-symbols:star-sparkles-outline.svg?color=%234f46e5" width="24" align="center"> Key Features
 
 This application breaks down the NLP pipeline into 7 distinct, interactive steps:
 
-1.  **🧼 Cleaning**: Remove noise like punctuation and special characters. 
-2.  **✂️ Tokenization**: Split text into meaningful units (Words or Sentences).
-3.  **📉 Normalization**: Apply Stopword removal, Stemming, or Lemmatization.
-4.  **📚 Vocabulary**: See how the model builds its internal dictionary.
-5.  **🔢 Vectorization**: Convert text to sparse vectors using **Bag-of-Words** or **TF-IDF**.
-6.  **📍 Static Embeddings**: Visualize 300-dimension word vectors projected onto a 2D PCA plane.
-7.  **🌌 Contextual Shift**: Experience how modern transformers like **BERT** change word embeddings based on surrounding context.
+1.  **<img src="https://api.iconify.design/material-symbols:cleaning-services.svg?color=%234f46e5" width="20" align="center"> Cleaning**: Remove noise like punctuation and special characters. 
+2.  **<img src="https://api.iconify.design/material-symbols:content-cut.svg?color=%234f46e5" width="20" align="center"> Tokenization**: Split text into meaningful units (Words or Sentences).
+3.  **<img src="https://api.iconify.design/material-symbols:bar-chart.svg?color=%234f46e5" width="20" align="center"> Normalization**: Apply Stopword removal, Stemming, or Lemmatization.
+4.  **<img src="https://api.iconify.design/material-symbols:library-books.svg?color=%234f46e5" width="20" align="center"> Vocabulary**: See how the model builds its internal dictionary.
+5.  **<img src="https://api.iconify.design/material-symbols:format-list-numbered.svg?color=%234f46e5" width="20" align="center"> Vectorization**: Convert text to sparse vectors using **Bag-of-Words** or **TF-IDF**.
+6.  **<img src="https://api.iconify.design/material-symbols:scatter-plot.svg?color=%234f46e5" width="20" align="center"> Static Embeddings**: Visualize 300-dimension word vectors projected onto a 2D PCA plane.
+7.  **<img src="https://api.iconify.design/material-symbols:explore.svg?color=%234f46e5" width="20" align="center"> Contextual Shift**: Experience how modern transformers like **BERT** change word embeddings based on surrounding context.
 
 ---
 
-## 🛠️ Technology Stack
+## <img src="https://api.iconify.design/material-symbols:build.svg?color=%234f46e5" width="24" align="center"> Technology Stack
 
 - **Core**: Python 3.9+ 
 - **Interface**: [Streamlit](https://streamlit.io/) (Premium Light Modern Theme)
@@ -33,7 +33,7 @@ This application breaks down the NLP pipeline into 7 distinct, interactive steps
 
 ---
 
-## 🚀 Getting Started
+## <img src="https://api.iconify.design/material-symbols:rocket-launch.svg?color=%234f46e5" width="24" align="center"> Getting Started
 
 ### 1. Prerequisites
 Ensure you have Python 3.9 or higher and a virtual environment tool installed.
@@ -60,14 +60,14 @@ streamlit run app.py
 
 ---
 
-## 💡 Usage Tip
+## <img src="https://api.iconify.design/material-symbols:lightbulb.svg?color=%234f46e5" width="24" align="center"> Usage Tip
 The **Configuration Sidebar** on the left allows you to customize every aspect of the pipeline in real-time. Use the **Contextual Tab** to see the semantic difference between words that look the same but mean different things (e.g., *bank* as a river side vs. a financial bank).
 
 ---
 
-## 🎨 UI/UX Philosophy
+## <img src="https://api.iconify.design/material-symbols:palette.svg?color=%234f46e5" width="24" align="center"> UI/UX Philosophy
 This app uses a **Premium Modern Light Theme** designed for maximum focus and readability. All visual elements are high-contrast and utilize a sophisticated indigo-slate palette perfect for educational demonstrations.
 
 ---
 
-**Made with ❤️ for the NLP Community**
+**Made with <img src="https://api.iconify.design/material-symbols:favorite.svg?color=%23e11d48" width="20" align="center"> for the NLP Community**

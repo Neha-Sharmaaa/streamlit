@@ -96,8 +96,8 @@ vocab_df = get_vocabulary(norm_tokens)
 
 # --- MAIN UI TABS ---
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-    "Cleaning", "Tokenization", "Normalization", 
-    "Vocabulary", "Vectorization", "Static Embeddings", "Contextual"
+    ":material/cleaning_services: Cleaning", ":material/content_cut: Tokenization", ":material/bar_chart: Normalization", 
+    ":material/library_books: Vocabulary", ":material/format_list_numbered: Vectorization", ":material/scatter_plot: Static Embeddings", ":material/explore: Contextual"
 ])
 
 # TAB 1: Cleaning

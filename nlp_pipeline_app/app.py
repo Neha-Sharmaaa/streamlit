@@ -23,7 +23,7 @@ with open(css_path) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # App Title & Intro
-st.title("The NLP Pipeline Explorer", icon=":material/psychology:")
+st.title(":material/psychology: The NLP Pipeline Explorer")
 st.markdown("""
 ### Discover how machines turn human language into numerical logic.
 Follow the journey of a sentence through preprocessing, vectorization, and embeddings.
@@ -31,7 +31,7 @@ Follow the journey of a sentence through preprocessing, vectorization, and embed
 
 # Sidebar Sidebar
 with st.sidebar:
-    st.header("Configuration", icon=":material/settings:")
+    st.header(":material/settings: Configuration")
     
     # Premium Indigo Chart Theme
     chart_color = "#1e293b" 
@@ -46,7 +46,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("Cleaning Options", icon=":material/cleaning_services:")
+    st.subheader(":material/cleaning_services: Cleaning Options")
     lowercasing = st.toggle("Lowercasing", True)
     remove_punct = st.toggle("Remove Punctuation", True)
     remove_special = st.toggle("Remove Special Characters", False)
@@ -59,7 +59,7 @@ with st.sidebar:
 
     st.divider()
     
-    st.subheader("Tokenization", icon=":material/content_cut:")
+    st.subheader(":material/content_cut: Tokenization")
     token_type = st.selectbox(
         "Tokenization Level",
         ["word", "subword", "character"]
@@ -67,7 +67,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("Normalization", icon=":material/bar_chart:")
+    st.subheader(":material/bar_chart: Normalization")
     remove_stop = st.toggle("Remove Stopwords", True)
     norm_method = st.radio(
         "Stemming / Lemmatization",
@@ -82,7 +82,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("Vectorization", icon=":material/format_list_numbered:")
+    st.subheader(":material/format_list_numbered: Vectorization")
     vector_method = st.selectbox(
         "Method",
         ["Bag-of-Words", "TF-IDF"]

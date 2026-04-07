@@ -131,7 +131,7 @@ def get_contextual_embeddings(sentence1, sentence2, target_word):
     """
     Uses sentence-transformers to show embedding shifts.
     """
-    model = SentenceTransformer('all-MiniLM-L6-v2') # Small and fast
+    # model = SentenceTransformer('all-MiniLM-L6-v2') # Small and fast
     
     # We can't easily get per-word from sentence-transformers without some tricks, 
     # but we can demo with specific inputs.
